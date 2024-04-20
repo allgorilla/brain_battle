@@ -49,8 +49,8 @@ namespace brain_battle
             // pictureBox1
             // 
             for (int i = 0; i < 9; i++) {
-                SetPictureBox(PbxBoard, 210, i);
                 SetPictureBox(PbxP1, 0, i);
+                SetPictureBox(PbxBoard, 210, i);
                 SetPictureBox(PbxP2, 420, i);
             }
 
@@ -59,12 +59,16 @@ namespace brain_battle
 
         private void SetPictureBox(PictureBox[] pbx, int j, int i)
         {
+            Bitmap bmp = Resource1.bs;
+
             pbx[i] = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pbx[i]).BeginInit();
- 
+
+            bmp.MakeTransparent(Color.White);
+            pbx[i].Image = bmp;
+            pbx[i].BackgroundImage = Resource1.tile;
             pbx[i].BackgroundImageLayout = ImageLayout.Center;
-            pbx[i].Image = Resource1.tile;
-            pbx[i].Location = new Point( 50+j+65*(i%3), 50+65*(i/3) );
+            pbx[i].Location = new Point( 50+j+64*(i%3), 50+64*(i/3) );
             pbx[i].Name = "pictureBox1";
             pbx[i].Size = new Size(64, 64);
             pbx[i].TabIndex = 0;

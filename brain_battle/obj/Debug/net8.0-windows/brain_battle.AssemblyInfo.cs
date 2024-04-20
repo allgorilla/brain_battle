@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("brain_battle")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bba747b1f63b3b9ace2fef89087dc7b5f9157315")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+03f6accb262fa4809c29051c42f18408559ce5a7")]
 [assembly: System.Reflection.AssemblyProductAttribute("brain_battle")]
 [assembly: System.Reflection.AssemblyTitleAttribute("brain_battle")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
