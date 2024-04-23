@@ -36,10 +36,10 @@ namespace brain_battle
             this.color = color;
             this.size = size;
 
-            this.SetBitmap(color,size);
+            this.SetImageBmp(color,size);
 
         }
-        private void SetBitmap(BirdColor color, BirdSize size) 
+        private void SetImageBmp(BirdColor color, BirdSize size) 
         {
             Bitmap[,] bmp_array = new Bitmap[(int)BirdColor.Max, (int)BirdSize.Max]
             {
@@ -49,11 +49,11 @@ namespace brain_battle
 
             if (BirdColor.Max < color)
             {
-                this.bmp = Resource1.darken;
+                this.bmp = Resource1.none;
             }
             else if (BirdSize.Max < size)
             {
-                this.bmp = Resource1.darken;
+                this.bmp = Resource1.none;
             }
             else
             {

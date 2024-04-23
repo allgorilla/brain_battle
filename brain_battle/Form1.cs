@@ -3,12 +3,14 @@ namespace brain_battle
     public partial class Form1 : Form
     {
         private Player[] player = new Player[2];
+        private Board board;
 
         public Form1()
         {
             InitializeComponent();
             this.player[0] = new Player(BirdColor.White,0);
             this.player[1] = new Player(BirdColor.Black,420);
+            this.board = new Board(210);
 
             SuspendLayout();
             // 
@@ -18,6 +20,7 @@ namespace brain_battle
             {
                 this.SetPictureBox(player[0].hand[i], PbxP1[i], i, 0);
                 this.SetPictureBox(player[1].hand[i], PbxP2[i], i, 420);
+                this.SetPictureBox(board.cell[i], PbxBoard[i], i, 210);
                 //SetPictureBox(PbxBoard, 210, i);
                 //player[1].SetPictureBox(PbxP2, i);
             }
