@@ -14,40 +14,26 @@ namespace brain_battle
 
             SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBox
             // 
             for (int i = 0; i < 9; i++)
             {
-                this.SetPictureBox(player[0].hand[i], PbxP1[i], i, 0);
-                this.SetPictureBox(player[1].hand[i], PbxP2[i], i, 420);
-                this.SetPictureBox(board.cell[i], PbxBoard[i], i, 210);
-                //SetPictureBox(PbxBoard, 210, i);
-                //player[1].SetPictureBox(PbxP2, i);
+                PictureBox pbx1 = board.SetPictureBox(i);
+                PictureBox pbx2 = player[0].SetPictureBox(i);
+                PictureBox pbx3 = player[1].SetPictureBox(i);
+
+                this.SetPictureBox(pbx1);
+                this.SetPictureBox(pbx2);
+                this.SetPictureBox(pbx3);
             }
 
             ResumeLayout(false);
         }
-        private void SetPictureBox(Bird bird, PictureBox pbx, int i, int pos_x) 
+        private void SetPictureBox(PictureBox pbx) 
         {
-            int x = 64 * (i % 3) + 50 + pos_x;
-            int y = 64 * (i / 3) + 50;
-            pbx = new PictureBox();
-
             ((System.ComponentModel.ISupportInitialize)pbx).BeginInit();
-
-            pbx.Image = bird.bmp;
-            pbx.BackgroundImage = Resource1.tile;
-            pbx.BackgroundImageLayout = ImageLayout.Center;
-            pbx.Location = new Point(x, y);
-            pbx.Name = "pictureBox1";
-            pbx.Size = new Size(62, 62);
-            pbx.TabIndex = 0;
-            pbx.TabStop = false;
-            pbx.Click += bird.PictureBox1_Click;
-
             Controls.Add(pbx);
             ((System.ComponentModel.ISupportInitialize)pbx).EndInit();
-
         }
     }
 }

@@ -36,5 +36,9 @@ namespace brain_battle
 
             this.color = color;
         }
+        public PictureBox SetPictureBox(int idx)
+        {
+            return this.hand[idx].SetPictureBox(idx, this.pos_x);
+        }
     }
 }

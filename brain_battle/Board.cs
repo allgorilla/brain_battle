@@ -21,5 +21,9 @@ namespace brain_battle
             }
         }
 
+        public PictureBox SetPictureBox(int idx)
+        {
+            return this.cell[idx].SetPictureBox(idx, this.pos_x);
+        }
     }
 }
