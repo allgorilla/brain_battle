@@ -26,10 +26,10 @@ namespace brain_battle
 
     internal class Bird
     {
-        public Bitmap bmp;
-        private BirdSize size;
-        private BirdColor color;
-        private PictureBox pbx;
+        private Bitmap? bmp = null;
+        private BirdSize? size = null;
+        private BirdColor? color = null;
+        private PictureBox? pbx = null;
 
         public Bird(BirdColor color, BirdSize size)
         {
@@ -64,8 +64,8 @@ namespace brain_battle
         }
         public PictureBox SetPictureBox( int idx, int pos_x ) 
         {
-            int x = 64 * (idx % 3) + 50 + pos_x;
-            int y = 64 * (idx / 3) + 50;
+            int x = 66 * (idx % 3) + 50 + pos_x;
+            int y = 66 * (idx / 3) + 50;
             this.pbx = new PictureBox();
 
             pbx.Image = this.bmp;
@@ -73,17 +73,11 @@ namespace brain_battle
             pbx.BackgroundImageLayout = ImageLayout.Center;
             pbx.Location = new Point(x, y);
             pbx.Name = "pictureBox1";
-            pbx.Size = new Size(62, 62);
+            pbx.Size = new Size(66, 66);
             pbx.TabIndex = 0;
             pbx.TabStop = false;
-            pbx.Click += this.PictureBox1_Click;
-
 
             return this.pbx;
-        }
-        public void PictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

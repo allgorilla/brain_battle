@@ -38,7 +38,8 @@ namespace brain_battle
         }
         public PictureBox SetPictureBox(int idx)
         {
-            return this.hand[idx].SetPictureBox(idx, this.pos_x);
+            PictureBox pbx_tmp = this.hand[idx].SetPictureBox(idx, this.pos_x);
+            return pbx_tmp;
         }
     }
 }

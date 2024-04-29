@@ -4,6 +4,7 @@ namespace brain_battle
     {
         private Player[] player = new Player[2];
         private Board board;
+        private PictureBox? CurrentPbx = null;
 
         public Form1()
         {
@@ -18,18 +19,36 @@ namespace brain_battle
             // 
             for (int i = 0; i < 9; i++)
             {
-                PictureBox pbx1 = board.SetPictureBox(i);
-                PictureBox pbx2 = player[0].SetPictureBox(i);
-                PictureBox pbx3 = player[1].SetPictureBox(i);
+                PictureBox? pbx1 = board.SetPictureBox(i);
+                PictureBox? pbx2 = player[0].SetPictureBox(i);
+                PictureBox? pbx3 = player[1].SetPictureBox(i);
 
-                this.SetPictureBox(pbx1);
-                this.SetPictureBox(pbx2);
-                this.SetPictureBox(pbx3);
+                pbx1.Click += PictureBox_Click;
+                pbx2.Click += PictureBox_Click;
+                pbx3.Click += PictureBox_Click;
+
+                this.AddControls(pbx1);
+                this.AddControls(pbx2);
+                this.AddControls(pbx3);
             }
 
             ResumeLayout(false);
         }
-        private void SetPictureBox(PictureBox pbx) 
+        private void PictureBox_Click(object? sender, EventArgs e)
+        {
+            PictureBox? pbx_tmp = sender as PictureBox;
+
+            if (CurrentPbx != null) {
+                CurrentPbx.BorderStyle = BorderStyle.None;
+                CurrentPbx.BackgroundImage = Resource1.tile;
+            }
+
+            pbx_tmp.BorderStyle = BorderStyle.FixedSingle;
+            pbx_tmp.BackgroundImage = Resource1.darken;
+            CurrentPbx = pbx_tmp;
+
+        }
+        private void AddControls(PictureBox pbx) 
         {
             ((System.ComponentModel.ISupportInitialize)pbx).BeginInit();
             Controls.Add(pbx);

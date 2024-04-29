@@ -23,7 +23,8 @@ namespace brain_battle
 
         public PictureBox SetPictureBox(int idx)
         {
-            return this.cell[idx].SetPictureBox(idx, this.pos_x);
+            PictureBox pbx_tmp = this.cell[idx].SetPictureBox(idx, this.pos_x);
+            return pbx_tmp;
         }
     }
 }
